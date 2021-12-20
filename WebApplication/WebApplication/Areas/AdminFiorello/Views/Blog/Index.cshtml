@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Product>
+﻿@model IEnumerable<Blog>
 @{
     ViewData["Title"] = "Index";
     int count = 1;
@@ -9,9 +9,9 @@
             <div class="card">
                 <!-- Card header -->
                 <div class="card-header border-0">
-                    <h3 class="mb-0">Products</h3>
+                    <h3 class="mb-0">Bloggers</h3>
                     <div class="col-sm-12 d-flex justify-content-end">
-                        <a class="btn btn-success" asp-action="Create">Create Product</a>
+                        <a class="btn btn-success" asp-action="Create">Add Blogger</a>
                     </div>
                 </div>
                 <!-- Light table -->
@@ -21,14 +21,14 @@
                             <tr>
                                 <th scope="col" class="sort" data-sort="name">№</th>
                                 <th scope="col" class="sort" data-sort="budget">Name</th>
-                                <th scope="col" class="sort" data-sort="Image">Image</th>
-                                <th scope="col" class="sort" data-sort="status">Price</th>
-                                <th scope="col" class="sort" data-sort="count">Count</th>
+                                <th scope="col" class="sort" data-sort="word">Description</th>
+                                <th scope="col" class="sort" data-sort="status">Image</th>
+                                <th scope="col" class="sort" data-sort="Date">Date</th>
                                 <th scope="col" class="sort" data-sort="setting">Setting</th>
                             </tr>
                         </thead>
                         <tbody class="list">
-                            @foreach (var pr in Model)
+                            @foreach (var blog in Model)
                             {
                                 <tr>
                                     <td>
@@ -40,20 +40,20 @@
                                     <th scope="row">
                                         <div class="media align-items-center">
                                             <div class="media-body">
-                                                <span class="name mb-0 text-sm">@pr.Name</span>
+                                                <span class="name mb-0 text-sm">@blog.Name</span>
                                             </div>
                                         </div>
                                     </th>
-                                    <td class="Image">
+                                    <td class="word">
+                                        @blog.Description
+                                    </td>
+                                    <td class="status">
                                         <a href="#" class="avatar rounded mr-3">
-                                            @*<img alt="Image placeholder" src="~/img/@pr.Images.Where(i=>i.IsMain==true)?.FirstOrDefault().Image">*@
+                                            @*<img alt="image placeholder" src="~/img/@blog.images">*@
                                         </a>
                                     </td>
-                                    <td class="budget">
-                                        $@pr.Price
-                                    </td>
-                                    <td>
-                                        @pr.Count
+                                    <td class="Date">
+                                        @blog.Date
                                     </td>
                                     <td class="text-right">
                                         <div class="dropdown">

@@ -307,3 +307,6 @@ C:\Users\Nigar\Desktop\12.17.2021\FrontToBack\WebApplication\WebApplication\obj\
 C:\Users\Nigar\Desktop\12.17.2021\FrontToBack\WebApplication\WebApplication\obj\Debug\netcoreapp3.1\Razor\Areas\AdminFiorello\Views\DashBoard\Index.cshtml.g.cs
 C:\Users\Nigar\Desktop\12.17.2021\FrontToBack\WebApplication\WebApplication\obj\Debug\netcoreapp3.1\Razor\Areas\AdminFiorello\Views\Category\Index.cshtml.g.cs
 C:\Users\Nigar\Desktop\12.17.2021\FrontToBack\WebApplication\WebApplication\obj\Debug\netcoreapp3.1\Razor\Areas\AdminFiorello\Views\Product\Index.cshtml.g.cs
+C:\Users\Nigar\Desktop\12.17.2021\FrontToBack\WebApplication\WebApplication\obj\Debug\netcoreapp3.1\Razor\Areas\AdminFiorello\Views\Team\Index.cshtml.g.cs
+C:\Users\Nigar\Desktop\12.17.2021\FrontToBack\WebApplication\WebApplication\obj\Debug\netcoreapp3.1\Razor\Areas\AdminFiorello\Views\Say\Index.cshtml.g.cs
+C:\Users\Nigar\Desktop\12.17.2021\FrontToBack\WebApplication\WebApplication\obj\Debug\netcoreapp3.1\Razor\Areas\AdminFiorello\Views\Blog\Index.cshtml.g.cs

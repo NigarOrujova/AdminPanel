@@ -19,13 +19,36 @@ namespace WebApplication.Areas.AdminFiorello.Controllers
         {
             return View(_context.Categories);
         }
-        public IActionResult Create()
+        public IActionResult Detail(int id)
         {
-            return View();
+            return Json(new {
+                action="detail",
+                Id=id
+            });
         }
-        public IActionResult Update()
+        public IActionResult Create(int id)
         {
-            return View();
+            return Json(new
+            {
+                action = "create",
+                Id = id
+            });
+        }
+        public IActionResult Update(int id)
+        {
+            return Json(new
+            {
+                action = "update",
+                Id = id
+            });
+        }
+        public IActionResult Delete(int id)
+        {
+            return Json(new
+            {
+                action = "delete",
+                Id = id
+            });
         }
     }
 }
