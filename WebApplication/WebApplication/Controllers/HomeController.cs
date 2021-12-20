@@ -32,11 +32,11 @@ namespace WebApplication.Controllers
                 About=await _context.About.FirstOrDefaultAsync(),
                 ListUnstyleds=await _context.ListUnstyled.ToListAsync(),
                 OurTeams=await _context.OurTeams.ToListAsync(),
-
                 Blogs =await _context.Blogs
                 .Include(b=>b.Images)
                 .OrderByDescending(b=>b.Id)
-                .ToListAsync()
+                .ToListAsync(),
+                Says=await _context.Says.ToListAsync()
             };
                 return View(homeViewModel);
         }

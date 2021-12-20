@@ -72,7 +72,7 @@
                         <div class="product-item text-center" data-id="@pro.Category.Name.ToLower()">
                             <div class="img">
                                 <a href="">
-                                    <img src="~/img/@pro.Images.Where(i=>i.IsMain==true).?FirstOrDefault().Image" class="img-fluid" alt="">
+                                    <img src="~/img/@pro.Images.Where(i=>i.IsMain==true).FirstOrDefault().Image" class="img-fluid" alt="">
                                 </a>
                             </div>
                             <div class="title mt-3">
@@ -150,7 +150,7 @@
                             </div>
                             <div class="text mt-3">
                                 <h6>@team.Name</h6>
-                                <p class="text-black-50">Florist</p>
+                                <p class="text-black-50">@team.Job</p>
                             </div>
                         </div>
                     </div>
@@ -206,7 +206,7 @@
                             <div class="img position-relative">
                                 <img src="~/img/@bl.Images.Where(i=>i.IsMain==true).FirstOrDefault().Image" class="img-fluid" alt="">
                                 <div class="date rounded bg-light position-absolute py-1 px-2">
-                                    <span>29.12.2019</span>
+                                    <span>@bl.Date</span>
                                 </div>
                             </div>
                             <div class="text mt-3 text-center px-5">
@@ -231,40 +231,25 @@
             <div class="row py-5 justify-content-center">
                 <div class="col-md-8 col-xl-6">
                     <div class="owl-carousel say">
-                        <div>
-                            <div class="item text-center">
-                                <div class="img d-flex justify-content-center">
-                                    <img src="~/img/testimonial-img-1.png" alt="">
-                                </div>
-                                <div class="text text-muted pt-3 pb-5">
-                                    <i>
-                                        Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus
-                                        lingua.
-                                    </i>
-                                </div>
-                                <div class="author">
-                                    <h6>Anna Barnes</h6>
-                                    <p class="text-black-50">Florist</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="item text-center">
-                                <div class="img d-flex justify-content-center">
-                                    <img src="~/img/testimonial-img-2.png" alt="">
-                                </div>
-                                <div class="text text-muted pt-3 pb-5">
-                                    <i>
-                                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
-                                        ligula eget.
-                                    </i>
-                                </div>
-                                <div class="author">
-                                    <h6>Jasmine White</h6>
-                                    <p class="text-black-50">Florist</p>
+                        @foreach (var say in Model.Says)
+                        {
+                            <div>
+                                <div class="item text-center">
+                                    <div class="img d-flex justify-content-center">
+                                        <img src="~/img/@say.Image" alt="">
+                                    </div>
+                                    <div class="text text-muted pt-3 pb-5">
+                                        <i>
+                                            @say.Description
+                                        </i>
+                                    </div>
+                                    <div class="author">
+                                        <h6>@say.Name</h6>
+                                        <p class="text-black-50">@say.Job</p>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                        }
                     </div>
                 </div>
             </div>

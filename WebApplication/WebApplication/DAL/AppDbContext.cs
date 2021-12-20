@@ -20,7 +20,6 @@ namespace WebApplication.DAL
         public DbSet<OurTeam> OurTeams { get; set; }
         public DbSet<Blog> Blogs { get; set; }
         public DbSet<BlogImage> BlogImages { get; set; }
-
-
+        public DbSet<Say> Says { get; set; }
     }
 }

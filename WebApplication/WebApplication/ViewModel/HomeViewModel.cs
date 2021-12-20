@@ -17,5 +17,6 @@ namespace WebApplication.ViewModel
         public List<ListUnstyled> ListUnstyleds { get; set; }
         public List<OurTeam> OurTeams { get; set; }
         public List<Blog> Blogs { get; set; }
+        public List<Say> Says { get; set; }
     }
 }

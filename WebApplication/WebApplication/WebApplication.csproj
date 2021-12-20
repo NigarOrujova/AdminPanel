@@ -9,6 +9,12 @@
     <Compile Remove="Migrations\20211218204708_CreateCategoryTable.Designer.cs" />
     <Compile Remove="Migrations\20211219060037_AddImageToProduct.cs" />
     <Compile Remove="Migrations\20211219060037_AddImageToProduct.Designer.cs" />
+    <Compile Remove="Migrations\20211220031521_AddJobToTable.cs" />
+    <Compile Remove="Migrations\20211220031521_AddJobToTable.Designer.cs" />
+    <Compile Remove="Migrations\20211220032237_AddJobDateToTable.cs" />
+    <Compile Remove="Migrations\20211220032237_AddJobDateToTable.Designer.cs" />
+    <Compile Remove="Migrations\20211220034441_AddSayTable.cs" />
+    <Compile Remove="Migrations\20211220034441_AddSayTable.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>
