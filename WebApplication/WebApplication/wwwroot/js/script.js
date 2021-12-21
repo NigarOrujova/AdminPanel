@@ -1,5 +1,18 @@
-$(document).ready(function () {
+/*const { log } = require("console");*/
 
+$(document).ready(function () {
+    $(document).on("click", "#btn_load", async function () {
+        let productCount = $(".products").children().length
+        let dbProductsCount = $("#productsCount").val();
+        let data = await fetch(`https://localhost:44337/Product/LoadProduct?skip=` + productCount);
+        let products = await data.text();
+        $(".products").append(products)
+        productCount = $(".products").children().length
+        if (productCount == dbProductsCount) {
+            $("#btn_load").remove();
+        }
+    })
+   
     // HEADER
 
     $(document).on('click', '#search', function () {

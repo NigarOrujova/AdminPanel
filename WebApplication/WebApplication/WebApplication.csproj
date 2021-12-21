@@ -15,6 +15,8 @@
     <Compile Remove="Migrations\20211220032237_AddJobDateToTable.Designer.cs" />
     <Compile Remove="Migrations\20211220034441_AddSayTable.cs" />
     <Compile Remove="Migrations\20211220034441_AddSayTable.Designer.cs" />
+    <Compile Remove="Migrations\20211220143557_Createblog2Table.cs" />
+    <Compile Remove="Migrations\20211220143557_Createblog2Table.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -2502,6 +2504,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="3.1.22" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.22" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.22">
       <PrivateAssets>all</PrivateAssets>

@@ -19,6 +19,7 @@ namespace WebApplication.Areas.AdminFiorello.Controllers
         {
             return View(_context.Categories);
         }
+
         public IActionResult Detail(int id)
         {
             return Json(new {

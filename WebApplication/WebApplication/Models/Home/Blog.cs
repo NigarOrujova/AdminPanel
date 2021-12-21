@@ -10,7 +10,7 @@ namespace WebApplication.Models.Home
         public int Id { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
-        public ICollection<BlogImage> Images { get; set; }
+        public ICollection<BlogImage> BlogImages { get; set; }
         public string Date { get; set; }
     }
 }

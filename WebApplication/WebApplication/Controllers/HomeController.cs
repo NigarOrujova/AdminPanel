@@ -33,7 +33,7 @@ namespace WebApplication.Controllers
                 ListUnstyleds=await _context.ListUnstyled.ToListAsync(),
                 OurTeams=await _context.OurTeams.ToListAsync(),
                 Blogs =await _context.Blogs
-                .Include(b=>b.Images)
+                .Include(b=>b.BlogImages)
                 .OrderByDescending(b=>b.Id)
                 .ToListAsync(),
                 Says=await _context.Says.ToListAsync()
