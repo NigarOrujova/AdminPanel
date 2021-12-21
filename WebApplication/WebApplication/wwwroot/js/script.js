@@ -9,6 +9,7 @@ $(document).ready(function () {
         $(".products").append(products)
         productCount = $(".products").children().length
         if (productCount == dbProductsCount) {
+            console.log(products)
             $("#btn_load").remove();
         }
     })

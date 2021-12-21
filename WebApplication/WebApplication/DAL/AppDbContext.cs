@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using WebApplication.Models;
 using WebApplication.Models.Home;
+using WebApplication.Models.Product;
 
 namespace WebApplication.DAL
 {
@@ -21,6 +22,7 @@ namespace WebApplication.DAL
         public DbSet<Blog> Blogs { get; set; }
         public DbSet<BlogImage> BlogImages { get; set; }
         public DbSet<Say> Says { get; set; }
+        public DbSet<Setting> Settings { get; set; }
 
     }
 }

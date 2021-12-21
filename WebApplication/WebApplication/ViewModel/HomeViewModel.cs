@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using WebApplication.Models;
 using WebApplication.Models.Home;
+using WebApplication.Models.Product;
 
 namespace WebApplication.ViewModel
 {
@@ -18,5 +19,6 @@ namespace WebApplication.ViewModel
         public List<OurTeam> OurTeams { get; set; }
         public List<Blog> Blogs { get; set; }
         public List<Say> Says { get; set; }
+        public Setting Setting { get; set; }
     }
 }
