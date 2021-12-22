@@ -1,8 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using WebApplication.DAL;
 using WebApplication.Models.Home;
@@ -19,7 +17,7 @@ namespace WebApplication.Areas.AdminFiorello.Controllers
         }
         public async Task<IActionResult> Index()
         {
-           List<Blog> blogs=await _context.Blogs.Include(p => p.BlogImages).ToListAsync();
+            List<Blog> blogs = await _context.Blogs.Include(p => p.BlogImages).ToListAsync();
             return View(blogs);
         }
     }

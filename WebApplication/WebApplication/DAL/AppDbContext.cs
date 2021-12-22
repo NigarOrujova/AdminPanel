@@ -5,7 +5,7 @@ using WebApplication.Models.Product;
 
 namespace WebApplication.DAL
 {
-    public class AppDbContext:DbContext
+    public class AppDbContext : DbContext
     {
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
         {

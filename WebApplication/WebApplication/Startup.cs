@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using System;
 using WebApplication.DAL;
 
 namespace WebApplication
@@ -20,8 +21,13 @@ namespace WebApplication
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddSession(options =>
+            {
+                options.IdleTimeout = TimeSpan.FromMinutes(20);
+            });
             services.AddControllersWithViews().AddRazorRuntimeCompilation();
-            services.AddDbContext<AppDbContext>(options =>{
+            services.AddDbContext<AppDbContext>(options =>
+            {
                 options.UseSqlServer(Configuration["ConnectionStrings:Default"]);
             });
         }
@@ -39,6 +45,7 @@ namespace WebApplication
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
+            app.UseSession();
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 

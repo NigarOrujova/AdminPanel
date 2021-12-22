@@ -1,8 +1,4 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using WebApplication.DAL;
 
 namespace WebApplication.Areas.AdminFiorello.Controllers
@@ -22,9 +18,10 @@ namespace WebApplication.Areas.AdminFiorello.Controllers
 
         public IActionResult Detail(int id)
         {
-            return Json(new {
-                action="detail",
-                Id=id
+            return Json(new
+            {
+                action = "detail",
+                Id = id
             });
         }
         public IActionResult Create(int id)
