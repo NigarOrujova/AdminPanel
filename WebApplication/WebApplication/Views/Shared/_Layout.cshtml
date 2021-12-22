@@ -36,11 +36,11 @@
                         <div class="collapse navbar-collapse d-none d-lg-block" id="navbarSupportedContent">
                             <ul class="navbar-nav ml-auto">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">Home</a>
+                                    <a class="nav-link"  asp-controller="Home" asp-action="Index">Home</a>
                                     <ul class="list-unstyled py-3">
-                                        <li class=""><a class="px-1" href="">Home 1</a></li>
-                                        <li class=""><a class="px-1" href="">Home 2</a></li>
-                                        <li class=""><a class="px-1" href="">Home 3</a></li>
+                                        <li class=""><a class="px-1" asp-controller="Home" asp-action="Index">Home 1</a></li>
+                                        <li class=""><a class="px-1" asp-controller="Home" asp-action="Index">Home 2</a></li>
+                                        <li class=""><a class="px-1" asp-controller="Home" asp-action="Index">Home 3</a></li>
                                     </ul>
                                 </li>
                                 <li class="nav-item">
@@ -159,9 +159,11 @@
                                 <li class="nav-item my-auto shop-cart">
                                     <i class="fas fa-shopping-bag"></i>
                                     <sup class="rounded-circle">0</sup>
-                                    <span>CART ($0)</span>
+                                    <span>BASKET($0)</span>
                                     <ul class="list-unstyled py-3">
-                                        <li class="">No products in the cart.</li>
+                                        <li class="">
+                                            <a id="basket" class="px-3" asp-controller="Product" asp-action="Basket">Go to Basket</a>
+                                        </li>
                                     </ul>
                                 </li>
                             </ul>

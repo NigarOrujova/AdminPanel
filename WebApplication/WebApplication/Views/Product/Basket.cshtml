@@ -1,0 +1,26 @@
+﻿@model IEnumerable<BasketViewModel>
+@{
+    ViewData["Title"] = "Basket";
+    int count = 1;
+}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Count</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var product in Model)
+         {
+            <tr>
+                <th scope="row">@count</th>
+                <td>@product.Count</td>
+            </tr>
+            count++;
+         }
+        
+
+    </tbody>
+</table>

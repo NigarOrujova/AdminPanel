@@ -585,3 +585,4 @@ C:\Users\Nigar\Desktop\12.17.2021\FrontToBack\WebApplication\WebApplication\bin\
 C:\Users\Nigar\Desktop\12.17.2021\FrontToBack\WebApplication\WebApplication\bin\Debug\netcoreapp3.1\System.Text.Json.dll
 C:\Users\Nigar\Desktop\12.17.2021\FrontToBack\WebApplication\WebApplication\obj\Debug\netcoreapp3.1\Razor\Views\Product\Index.cshtml.g.cs
 C:\Users\Nigar\Desktop\12.17.2021\FrontToBack\WebApplication\WebApplication\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ProductPartial.cshtml.g.cs
+C:\Users\Nigar\Desktop\12.17.2021\FrontToBack\WebApplication\WebApplication\obj\Debug\netcoreapp3.1\Razor\Views\Product\Basket.cshtml.g.cs

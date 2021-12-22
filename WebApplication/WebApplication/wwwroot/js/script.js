@@ -13,6 +13,15 @@ $(document).ready(function () {
             $("#btn_load").remove();
         }
     })
+    $(document).on("click", "#basket", function () {
+        $.ajax({
+            url: "/Product/Basket",
+            method: "GET",
+            success: function (result){
+                console.log(result)
+            }
+        })
+    })
    
     // HEADER
 

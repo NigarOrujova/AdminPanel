@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -15,6 +16,7 @@ namespace WebApplication.Controllers
         private AppDbContext _context { get; }
         private int _productCount;
         private int _productTake;
+        private string _productitem;
         public ProductController(AppDbContext context)
         {
             _context = context;
@@ -93,7 +95,8 @@ namespace WebApplication.Controllers
         }
         public IActionResult Basket()
         {
-            return Json(JsonConvert.DeserializeObject<List<BasketViewModel>>(Request.Cookies["basket"]));
+            return View(JsonConvert.DeserializeObject<List<BasketViewModel>>(Request.Cookies["basket"]));
         }
+
     }
 }
