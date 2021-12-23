@@ -44,13 +44,13 @@ namespace WebApplication.Controllers
                     button = "Load More"
                 });
             }
-            var model = _context.Products
-                                .OrderByDescending(p => p.Id)
-                                .Skip(skip)
-                                .Take(_productTake)
-                                .Include(p => p.Images)
-                                .ToList();
-            return PartialView("_ProductPartial", model);
+            //var model = _context.Products
+            //                    .OrderByDescending(p => p.Id)
+            //                    .Skip(skip)
+            //                    .Take(_productTake)
+            //                    .Include(p => p.Images)
+            //                    .ToList();
+            return ViewComponent("Product",new {take=8,skip=skip });
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -93,10 +93,37 @@ namespace WebApplication.Controllers
             }
             return basket;
         }
-        public IActionResult Basket()
+        public async Task<IActionResult> Basket()
         {
-            return View(JsonConvert.DeserializeObject<List<BasketViewModel>>(Request.Cookies["basket"]));
+            List<BasketViewModel> basket = GetBasket();
+            List<BasketItemViewModel> model = await GetBasketList(basket);
+            return View(model);
         }
-
+        private async Task<List<BasketItemViewModel>> GetBasketList(List<BasketViewModel> basket)
+        {
+            List<BasketItemViewModel> model = new List<BasketItemViewModel>();
+            foreach (BasketViewModel item in basket)
+            {
+                Product DbProduct =await _context.Products
+                                                    .Include(p => p.Images)
+                                                    .FirstOrDefaultAsync(p => p.Id == item.Id);
+                BasketItemViewModel itemViewModel = getBAsketItem(item, DbProduct);
+                model.Add(itemViewModel);
+            }
+            return model;
+        }
+        private BasketItemViewModel getBAsketItem(BasketViewModel item, Product DbProduct)
+        {
+            return new BasketItemViewModel
+            {
+                Id=item.Id,
+                Name=DbProduct.Name,
+                Count=item.Count,
+                StockCount=DbProduct.Count,
+                Image= DbProduct.Images.Where(i=>i.IsMain).FirstOrDefault().Image,
+                Price=DbProduct.Price,
+                IsActive= DbProduct.IsDeleted
+            };
+        }
     }
 }

@@ -1,26 +1,41 @@
-﻿@model IEnumerable<BasketViewModel>
+﻿@model List<BasketItemViewModel>
 @{
     ViewData["Title"] = "Basket";
+    decimal total = 0;
     int count = 1;
 }
 
 <table class="table">
+    @if(Model.Count!=0)
+    {
     <thead>
         <tr>
             <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Image</th>
             <th scope="col">Count</th>
+            <th scope="col">StockCount</th>
+            <th scope="col">Price</th>
         </tr>
     </thead>
-    <tbody>
-        @foreach (var product in Model)
-         {
-            <tr>
-                <th scope="row">@count</th>
-                <td>@product.Count</td>
-            </tr>
-            count++;
-         }
-        
-
-    </tbody>
+    @foreach (var product in Model)
+    {
+        total += product.Count * product.Price;
+        <tr>
+            <th scope="row">@count</th>
+            <td>@product.Name</td>
+            <td>
+                <img height="150" src="~/img/@product.Image" alt="" />
+            </td>
+            <td>@product.Count</td>
+            <td>@product.StockCount</td>
+            <td>$@product.Price</td>
+        </tr>
+        count++;
+    }
+    <h5 class="mx-3">Total Price: $@total</h5>
+    }else
+    {
+    <h2><a asp-controller="Product" asp-action="İndex">Buradan</a>məhsul əlavə edə bilərsiniz</h2>
+    }
 </table>

@@ -24,5 +24,8 @@ namespace WebApplication.DAL
         public DbSet<Say> Says { get; set; }
         public DbSet<Setting> Settings { get; set; }
 
+        public DbSet<Service> Services { get; set; }
+        public DbSet<SocialMedia> SocialMedias { get; set; }
+        public DbSet<Company> Companies { get; set; }
     }
 }

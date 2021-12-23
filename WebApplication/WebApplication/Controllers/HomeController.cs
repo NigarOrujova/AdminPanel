@@ -29,12 +29,7 @@ namespace WebApplication.Controllers
                 Categories = await _context.Categories
                 .Where(c => c.IsDeleted == false)
                 .ToListAsync(),
-                Products = await _context.Products
-                .Where(p => p.IsDeleted == false)
-                .Include(p => p.Category)
-                .Include(p => p.Images)
-                .OrderByDescending(p => p.Id)
-                .ToListAsync(),
+                
                 About = await _context.About.FirstOrDefaultAsync(),
                 ListUnstyleds = await _context.ListUnstyled.ToListAsync(),
                 OurTeams = await _context.OurTeams.ToListAsync(),

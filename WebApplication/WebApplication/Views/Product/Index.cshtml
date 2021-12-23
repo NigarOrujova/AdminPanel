@@ -1,11 +1,11 @@
-﻿@model IEnumerable<Product>
-@{
+﻿@{
     ViewData["Title"] = "Index";
 }
 
 <div class="container">
     <div class="row products">
-        <partial name="_ProductPartial"/>
+        @*<partial name="_ProductPartial"/>*@
+        @await Component.InvokeAsync("Product",new { take=12,skip=12})
     </div>
     <input type="hidden" id="productsCount" value="@ViewBag.proCount" />
     <div class="row my-5 justify-content-center">
