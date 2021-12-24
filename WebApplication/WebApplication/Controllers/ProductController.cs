@@ -15,7 +15,7 @@ namespace WebApplication.Controllers
     {
         private AppDbContext _context { get; }
         private int _productCount;
-        private int _productTake;
+        //private string _productTake;
         private string _productitem;
         public ProductController(AppDbContext context)
         {
@@ -23,7 +23,7 @@ namespace WebApplication.Controllers
             _productCount = _context.Products
                                        .Where(p => p.IsDeleted == false)
                                        .Count();
-            _productTake = _context.Settings.Where(n => n.Key == "Pro_take_count").FirstOrDefault().Value;
+            //_productTake = _context.Settings.Where(n => n.Key == "Pro_take_count").FirstOrDefault().Value;
         }
         public IActionResult Index()
         {
@@ -32,7 +32,7 @@ namespace WebApplication.Controllers
             return View(_context.Products
                                 .Where(p => p.IsDeleted == false)
                                 .OrderByDescending(p => p.Id)
-                                .Take(_productTake)
+                                .Take(8)
                                 .Include(p => p.Images));
         }
         public IActionResult LoadProduct(int skip)

@@ -1,0 +1,23 @@
+﻿@model Category
+@{
+    ViewData["Title"] = "Create";
+}
+<div class="row">
+    <div class="col-md-6 grid-margin">
+        <div class="card">
+            <div class="card-body">
+                <form method="post">
+                    <h4 class="card-title">Create Category</h4>
+                    <div class="form-group">
+                        <label asp-for="Name" class="form-control-label">Category</label>
+                        <input asp-for="Name" class="form-control" id="category" placeholder="Category Name">
+                        <span class="text-danger" asp-validation-for="Name"></span>
+                    </div>
+                    <button type="submit" class="btn btn-facebook mr-2">Submit</button>
+                    <a class="btn btn-pinterest" asp-action="Index">Cancel</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+

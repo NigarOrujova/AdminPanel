@@ -1,5 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 using WebApplication.DAL;
+using WebApplication.Models.Home;
 
 namespace WebApplication.Areas.AdminFiorello.Controllers
 {
@@ -11,9 +15,10 @@ namespace WebApplication.Areas.AdminFiorello.Controllers
         {
             _context = context;
         }
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return View(_context.Products);
+            List<Product> product = await _context.Products.Include(p => p.Images).ToListAsync();
+            return View(product);
         }
     }
 }

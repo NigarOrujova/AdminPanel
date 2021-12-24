@@ -589,3 +589,4 @@ C:\Users\Nigar\Desktop\12.17.2021\FrontToBack\WebApplication\WebApplication\obj\
 C:\Users\Nigar\Desktop\12.17.2021\FrontToBack\WebApplication\WebApplication\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\Product\Default.cshtml.g.cs
 C:\Users\Nigar\Desktop\12.17.2021\FrontToBack\WebApplication\WebApplication\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\Footer\Default.cshtml.g.cs
 C:\Users\Nigar\Desktop\12.17.2021\FrontToBack\WebApplication\WebApplication\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\Header\Default.cshtml.g.cs
+C:\Users\Nigar\Desktop\12.17.2021\FrontToBack\WebApplication\WebApplication\obj\Debug\netcoreapp3.1\Razor\Areas\AdminFiorello\Views\Category\Create.cshtml.g.cs

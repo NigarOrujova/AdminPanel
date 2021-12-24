@@ -6,6 +6,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System;
 using WebApplication.DAL;
+using WebApplication.Services;
 
 namespace WebApplication
 {
@@ -30,6 +31,7 @@ namespace WebApplication
             {
                 options.UseSqlServer(Configuration["ConnectionStrings:Default"]);
             });
+            services.AddScoped<LayoutServices>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

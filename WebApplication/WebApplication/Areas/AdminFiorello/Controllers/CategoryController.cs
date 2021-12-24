@@ -1,5 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using System.Linq;
+using System.Threading.Tasks;
 using WebApplication.DAL;
+using WebApplication.Models.Home;
 
 namespace WebApplication.Areas.AdminFiorello.Controllers
 {
@@ -24,13 +27,24 @@ namespace WebApplication.Areas.AdminFiorello.Controllers
                 Id = id
             });
         }
-        public IActionResult Create(int id)
+        public IActionResult Create()
         {
-            return Json(new
+            return View();
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create(Category category)
+        {
+            if (!ModelState.IsValid) return View();
+            bool IsExist = _context.Categories.Any(c => c.Name.ToLower().Trim() == category.Name.ToLower().Trim());
+            if (IsExist)
             {
-                action = "create",
-                Id = id
-            });
+                ModelState.AddModelError("Name", "This category already exist");
+                return View();
+            }
+            await _context.Categories.AddAsync(category);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
         }
         public IActionResult Update(int id)
         {

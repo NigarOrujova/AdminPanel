@@ -28,7 +28,7 @@
                             </tr>
                         </thead>
                         <tbody class="list">
-                            @foreach (var pr in Model)
+                            @foreach (var pro in Model)
                             {
                                 <tr>
                                     <td>
@@ -40,20 +40,20 @@
                                     <th scope="row">
                                         <div class="media align-items-center">
                                             <div class="media-body">
-                                                <span class="name mb-0 text-sm">@pr.Name</span>
+                                                <span class="name mb-0 text-sm">@pro.Name</span>
                                             </div>
                                         </div>
                                     </th>
                                     <td class="Image">
                                         <a href="#" class="avatar rounded mr-3">
-                                            @*<img alt="Image placeholder" src="~/img/@pr.Images.Where(i=>i.IsMain==true)?.FirstOrDefault().Image">*@
+                                            <img alt="Image placeholder" src="~/img/@pro.Images.Where(i=>i.IsMain==true)?.FirstOrDefault().Image">
                                         </a>
                                     </td>
                                     <td class="budget">
-                                        $@pr.Price
+                                        $@pro.Price
                                     </td>
                                     <td>
-                                        @pr.Count
+                                        @pro.Count
                                     </td>
                                     <td class="text-right">
                                         <div class="dropdown">
