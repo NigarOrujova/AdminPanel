@@ -1,0 +1,41 @@
+﻿@model Category
+@{
+    ViewData["Title"] = "Update";
+}
+<div class="row">
+    <div class="col-md-6 grid-margin">
+        <div class="card">
+            <div class="card-body">
+                <form method="post">
+                    <h4 class="card-title">Update Category</h4>
+                    <div class="form-group">
+                        <label asp-for="Name" class="form-control-label">Category</label>
+                        <input asp-for="Name" class="form-control" id="category" placeholder="Category Name">
+                        <span class="text-danger" asp-validation-for="Name"></span>
+                    </div>
+                    <button type="button" class="btn btn-facebook mr-2" data-toggle="modal" data-target="#exampleModal">Update</button>
+                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Update Category</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <p>Are you sure to update this Category?</p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-pinterest" data-dismiss="modal">No</button>
+                                    <button type="submit" class="btn btn-success">Yes</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <a class="btn btn-pinterest" asp-action="Index">Go Back</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

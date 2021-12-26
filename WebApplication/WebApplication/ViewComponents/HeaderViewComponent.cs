@@ -21,10 +21,10 @@ namespace WebApplication.ViewComponents
         }
         public async Task<IViewComponentResult> InvokeAsync()
         {
-            GetBasket();
-            var basket = JsonConvert.DeserializeObject<List<BasketViewModel>>(Request.Cookies["basket"]);
-            if (basket != null)
+            List<BasketViewModel> basket;
+            if (Request.Cookies["basket"] != null)
             {
+                basket = JsonConvert.DeserializeObject<List<BasketViewModel>>(Request.Cookies["basket"]);
                 ViewBag.BasketItemCount = basket.Count();
             }
             else
@@ -33,20 +33,6 @@ namespace WebApplication.ViewComponents
             }
             var setting = _context.Settings.AsEnumerable().ToDictionary(s => s.Key, s => s.Value);
             return View(await Task.FromResult(setting));
-        }
-        
-        public List<BasketViewModel> GetBasket()
-        {
-            List<BasketViewModel> basket;
-            if (Request.Cookies["basket"] != null)
-            {
-                basket = JsonConvert.DeserializeObject<List<BasketViewModel>>(Request.Cookies["basket"]);
-            }
-            else
-            {
-                basket = new List<BasketViewModel>();
-            }
-            return basket;
         }
     }
 }

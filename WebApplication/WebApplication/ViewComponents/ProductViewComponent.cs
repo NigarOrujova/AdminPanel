@@ -29,6 +29,5 @@ namespace WebApplication.ViewComponents
                                     .ToListAsync();
             return View(model);
         }
-
     }
 }
