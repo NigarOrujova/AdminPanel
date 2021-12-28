@@ -17,11 +17,13 @@ namespace WebApplication.Areas.AdminFiorello.Controllers
     {
         private readonly AppDbContext _context;
         private readonly IWebHostEnvironment _env;
+        private Dictionary<string, string> ImageSize { get; set; }
 
         public SliderController(AppDbContext context, IWebHostEnvironment env)
         {
             _context = context;
             _env = env;
+            ImageSize = _context.Settings.AsEnumerable().ToDictionary(s => s.Key,s=>s.Value);
         }
         public IActionResult Index()
         {
@@ -41,7 +43,7 @@ namespace WebApplication.Areas.AdminFiorello.Controllers
                 ModelState.AddModelError("Photo", "File should be image type");
                 return View();
             }
-            if (!slider.Photo.CheckFileSize(200))
+            if (!slider.Photo.CheckFileSize(int.Parse(ImageSize["File_Size"])))
             {
                 ModelState.AddModelError("Photo", "File size must be less than200kb");
                 return View();
