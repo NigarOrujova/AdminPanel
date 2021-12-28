@@ -46,7 +46,7 @@
                                     </th>
                                     <td class="Image">
                                         <a href="#" class="avatar rounded mr-3">
-                                            <img alt="Image placeholder" src="~/img/@pro.Images.Where(i=>i.IsMain==true)?.FirstOrDefault().Image">
+                                            @*<img alt="Image placeholder" src="~/img/@pro.Images.Where(i=>i.IsMain==true)?.FirstOrDefault().Image">*@
                                         </a>
                                     </td>
                                     <td class="budget">
@@ -63,7 +63,9 @@
                                             <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
                                                 <a class="dropdown-item" asp-action="Detail" asp-route-id="">Detail</a>
                                                 <a class="dropdown-item" asp-action="Update" asp-route-id="">Update</a>
-                                                <a class="dropdown-item" asp-action="Delete" asp-route-id="">Delete</a>
+                                                <form asp-action="Delete" method="post" class="d-inline">
+                                                    <button type="submit" class="dropdown-item" asp-action="Delete" asp-route-id="@pro.Id">Delete</button>
+                                                </form>
                                             </div>
                                         </div>
                                     </td>

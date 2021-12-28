@@ -595,3 +595,6 @@ C:\Users\Nigar\Desktop\12.17.2021\FrontToBack\WebApplication\WebApplication\obj\
 C:\Users\Nigar\Desktop\12.17.2021\FrontToBack\WebApplication\WebApplication\obj\Debug\netcoreapp3.1\Razor\Areas\AdminFiorello\Views\Shared\_ValidationPartial.cshtml.g.cs
 C:\Users\Nigar\Desktop\12.17.2021\FrontToBack\WebApplication\WebApplication\obj\Debug\netcoreapp3.1\Razor\Areas\AdminFiorello\Views\Slider\Index.cshtml.g.cs
 C:\Users\Nigar\Desktop\12.17.2021\FrontToBack\WebApplication\WebApplication\obj\Debug\netcoreapp3.1\Razor\Areas\AdminFiorello\Views\Slider\Create.cshtml.g.cs
+C:\Users\Nigar\Desktop\12.17.2021\FrontToBack\WebApplication\WebApplication\obj\Debug\netcoreapp3.1\Razor\Areas\AdminFiorello\Views\Slider\Update.cshtml.g.cs
+C:\Users\Nigar\Desktop\12.17.2021\FrontToBack\WebApplication\WebApplication\obj\Debug\netcoreapp3.1\Razor\Areas\AdminFiorello\Views\Product\Create.cshtml.g.cs
+C:\Users\Nigar\Desktop\12.17.2021\FrontToBack\WebApplication\WebApplication\obj\Debug\netcoreapp3.1\Razor\Areas\AdminFiorello\Views\Product\Update.cshtml.g.cs

@@ -1,0 +1,31 @@
+﻿@model Product
+@{
+    ViewData["Title"] = "Create";
+}
+<div class="row">
+    <div class="col-md-6 grid-margin">
+        <div class="card">
+            <div class="card-body">
+                <form method="post" enctype="multipart/form-data">
+                    <h4 class="card-title">Create Product</h4>
+                    <div class="form-group">
+                        <label asp-for="Name" class="form-control-label">Product</label>
+                        <input asp-for="Name" class="form-control" id="category">
+                        <select asp-for="CategoryId" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+                            @foreach (var item in (List<Category>) @ViewBag.Categories)
+                            {
+                                <option value="@item.Id">@item.Name</option>
+                            }
+                        </select>
+                        <span class="text-danger" asp-validation-for="Name"></span>
+                    </div>
+                    <button type="submit" class="btn btn-facebook mr-2">Create</button>
+                    <a class="btn btn-pinterest" asp-action="Index">Cancel</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+@section script{
+    <partial name="_ValidationPartial" />
+}

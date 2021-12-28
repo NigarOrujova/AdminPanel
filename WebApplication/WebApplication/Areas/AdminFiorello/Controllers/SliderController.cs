@@ -65,5 +65,34 @@ namespace WebApplication.Areas.AdminFiorello.Controllers
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
+        public async Task<IActionResult> Update(int id)
+        {
+           Slider slider =await  _context.Sliders.FindAsync(id);
+            return View(slider);
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Update(int id,Slider slider)
+        {
+            if (id != slider.Id) return BadRequest();
+            if (ModelState["Photo"].ValidationState == ModelValidationState.Invalid) return RedirectToAction(nameof(Index));
+            Slider dbSlider = await _context.Sliders.FindAsync(id);
+            if (dbSlider == null) return NotFound();
+            if (!slider.Photo.CheckFileType("image/"))
+            {
+                ModelState.AddModelError("Photo", "File should be image type");
+                return View();
+            }
+            if (!slider.Photo.CheckFileSize(int.Parse(ImageSize["File_Size"])))
+            {
+                ModelState.AddModelError("Photo", "File size must be less than200kb");
+                return View();
+            }
+            Helper.RemoveFile(_env.WebRootPath, "img", dbSlider.Image);
+            string newFileName = await slider.Photo.SaveFileAsync(_env.WebRootPath, "img");
+            dbSlider.Image = newFileName;
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
+        }
     }
 }

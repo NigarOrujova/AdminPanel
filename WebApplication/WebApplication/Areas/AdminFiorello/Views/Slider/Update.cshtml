@@ -1,0 +1,26 @@
+﻿@model Slider
+@{
+    ViewData["Title"] = "Update";
+}
+<div class="row">
+    <div class="col-md-6 grid-margin">
+        <div class="card">
+            <div class="card-body">
+                <form method="post" enctype="multipart/form-data">
+                    <h4 class="card-title">Update Category</h4>
+                    <img src="~/img/@Model.Image" style="height:130px; " alt=""/>
+                    <div class="form-group">
+                        <label asp-for="Photo" class="form-control-label">Image</label>
+                        <input asp-for="Photo" class="form-control" id="category" accept="image/*">
+                        <span class="text-danger" asp-validation-for="Photo"></span>
+                    </div>
+                    <button type="submit" class="btn btn-facebook mr-2">Update</button>
+                    <a class="btn btn-pinterest" asp-action="Index">Cancel</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+@section script{
+    <partial name="_ValidationPartial" />
+}
