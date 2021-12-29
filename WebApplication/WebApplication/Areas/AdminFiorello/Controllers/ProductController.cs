@@ -31,8 +31,8 @@ namespace WebApplication.Areas.AdminFiorello.Controllers
         public async Task<IActionResult> Create(Product product)
         {
             if (!ModelState.IsValid) return View();
-            bool IsExits = _context.Products.Where(p => p.IsDeleted == false && p.Images == null).FirstOrDefault() != null;
-            if (IsExits)
+            bool IsExist = _context.Products.Any(p => p.Name.ToLower().Trim() == product.Name.ToLower().Trim());
+            if (IsExist)
             {
                 ModelState.AddModelError("Name", "This Product already exist");
                 return View();
